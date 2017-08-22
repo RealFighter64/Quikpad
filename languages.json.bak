@@ -1,0 +1,72 @@
+{
+    "lua": {
+        "lexer": "lua",
+        "tokens": {
+            "Token.Text": {
+                "fg": "#000000",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Literal.String.Double": {
+                "fg": "#008800",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Literal.String.Single": {
+                "fg": "#008800",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Literal.String.Preproc": {
+                "fg": "#880088",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Literal.Number.Integer": {
+                "fg": "#008800",
+                "bold": false,
+                "italic": true
+            },
+            "Token.Literal.String.Float": {
+                "fg": "#008800",
+                "bold": false,
+                "italic": true
+            },
+            "Token.Keyword": {
+                "fg": "#000088",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Keyword.Namespace": {
+                "fg": "#000088",
+                "bold": true,
+                "italic": false
+            },
+            "Token.Name.Builtin": {
+                "fg": "#880000",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Name.Builtin.Pseudo": {
+                "fg": "#888800",
+                "bold": false,
+                "italic": false
+            },
+            "Token.Name.Function": {
+                "fg": "#880000",
+                "bold": true,
+                "italic": false
+            },
+            "Token.Name.Function.Magic": {
+                "fg": "#880000",
+                "bold": true,
+                "italic": true
+            },
+            "Token.Name.Class": {
+                "fg": "#008888",
+                "bold": true,
+                "italic": false
+            }
+        }
+    }
+}
