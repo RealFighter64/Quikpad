@@ -44,6 +44,9 @@ class LanguageConfig:
     def getToken(self, language, token):
         return self.languages[language]["tokens"][token]
 
+    def getTabSpace(self, language):
+        return self.languages[language]["tabspace"]
+
     def setUpTags(self, language, textWidget):
         for key, token in self.languages[language]["tokens"].items():
             if token["bold"]:

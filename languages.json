@@ -1,6 +1,7 @@
 {
     "python": {
         "lexer": "python",
+        "tabspace": 4,
         "tokens": {
             "Token.Text": {
                 "fg": "#000000",

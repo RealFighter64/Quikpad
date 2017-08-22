@@ -19,6 +19,8 @@ class Editor(ttk.Frame):
         self._resetting_modified_flag = False
         self.config = config
 
+        print(self.config.getTabSpace(self.language))
+
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
@@ -59,15 +61,16 @@ class Editor(ttk.Frame):
         self.verticalScrollbar.set(first, last)
 
     def tab(self, *args):
-        self.text.insert(tk.INSERT, " " * 4)
+        self.text.insert(tk.INSERT, " " * self.config.getTabSpace(self.language))
         return 'break'
+
     def backspace(self, *args):
         validChars = set(' ')
         text = self.text.get("insert linestart", "insert")
         if(all(char in validChars for char in text)):
-            if(len(text) % 4 == 0 and len(text) != 0):
+            if(len(text) % self.config.getTabSpace(self.language) == 0 and len(text) != 0):
                 # Delete 4 spaces
-                self.text.delete("insert-4c", "insert")
+                self.text.delete("insert-"+str(self.config.getTabSpace(self.language))+"c", "insert")
                 return 'break'
     
     def enter(self, *args):
@@ -75,14 +78,14 @@ class Editor(ttk.Frame):
         isColon = self.text.get("insert-1c") == ":"
         c = 0
         if isColon: 
-            c += 4
+            c += self.config.getTabSpace(self.language)
         print("thing")
         for char in text:
             if char == ' ':
                 c += 1
             else:
                 break
-        if c % 4 == 0:
+        if c % self.config.getTabSpace(self.language) == 0:
             self.text.insert("insert", "\n" + (' ' * c))
             return 'break'
     def tagConfig(self):
