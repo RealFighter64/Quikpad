@@ -18,5 +18,5 @@ setup(
             ]
         }
     },
-    executables=[Executable("main.py", icon="favicon.ico",)]
+    executables=[Executable("main.py", icon="favicon.ico")]
 )
